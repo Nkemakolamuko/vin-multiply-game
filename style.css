@@ -1,8 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: cursive;
-    background: linear-gradient(to right, #e5ff00, #7bff00);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(to top, #92a012, #325c0b);
     height: 100vh;
     justify-content: center;
     align-items: center;
@@ -50,7 +50,6 @@ button {
     display: block;
     width: 100%;
     margin: 15px 0px;
-    font-family: cursive;
     font-size: 1.5rem;
     font-weight: bolder;
     background-color: #239700;
@@ -62,8 +61,9 @@ button {
 .user {
     display: flex;
     justify-content: space-between;
-    color: #064700;
+    color: #15ff00;
     font-size: large;
+    margin-top: 40px;
 }
 
 #score {
