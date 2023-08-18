@@ -15,6 +15,10 @@ const restartButton = document.getElementById("restart");
 
 const newPlayerButton = document.getElementById("new-player");
 
+// Get references to the audio elements
+const correctSound = document.getElementById("correctSound");
+const incorrectSound = document.getElementById("incorrectSound");
+
 
 let nam = localStorage.getItem("playerName");
 
@@ -35,12 +39,13 @@ scorel.innerText = `Score: ${score}`;
 
 quest.innerText = `What is ${num1} multiply by ${num2}?`;
 
-const correctAns = num1 * num2;
+let correctAns = num1 * num2;
 
 form.addEventListener("submit", () => {
   const userAns = +input.value;
   if (userAns === correctAns) {
     score++;
+    playCorrectSound();
     updateLocalStorage();
   } else {
     score--;
@@ -69,6 +74,18 @@ restartButton.addEventListener("click", () => {
     alert(`10 in a row
     You're a genius!`);
   }
+
+// Play the correct sound
+function playCorrectSound() {
+  correctSound.currentTime = 0; // Rewind to the beginning
+  correctSound.play();
+}
+
+// Play the incorrect sound
+function playIncorrectSound() {
+  incorrectSound.currentTime = 0; // Rewind to the beginning
+  incorrectSound.play();
+}
 
 function updateLocalStorage() {
   localStorage.setItem("score", JSON.stringify(score));
